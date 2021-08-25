@@ -67,7 +67,7 @@ export class Secp256k1KeyIdentity extends SignIdentity {
    * @returns {Secp256k1KeyIdentity}
    */
   public static generate(seed?: Uint8Array): Secp256k1KeyIdentity {
-    if (seed && seed.length !== 32) {
+    if (seed && seed.byteLength !== 32) {
       throw new Error('Secp256k1 Seed needs to be 32 bytes long.');
     }
     let privateKey: Uint8Array;
